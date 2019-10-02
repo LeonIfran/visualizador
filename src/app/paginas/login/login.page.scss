@@ -1,0 +1,30 @@
+.classTinte{
+    --color: var(--ion-color-primary-tint);
+  }
+.tinteDos{
+    --color:#ffff73
+}
+.displayed{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mayor{
+  width: 100%;
+  // border: 1px solid red;
+  text-align: center;
+}
+
+.izq{
+  float: left;
+  width: 49%;
+  // border: 1px solid green;
+
+}
+
+.der{
+  float: right;
+  width: 49%;
+  // border: 1px solid blue;
+}
+

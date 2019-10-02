@@ -1,0 +1,46 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content color='primary'>
+  <!-- <ion-thumbnail > -->
+    <img style="margin-top:20px" class="displayed" height="80 px" width="80px" src='../../../assets/graficos/house.png'>
+  <!-- </ion-thumbnail> -->
+    
+
+  <ion-card color="sombra">
+    <ion-card-header>
+      <ion-card-title>Registro</ion-card-title>
+    </ion-card-header>
+    <ion-item color="tinte">
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input type="email" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+    <ion-item color="tinte">
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="user.pass"></ion-input>
+    </ion-item>
+    <!-- <ion-button size="large" expand="full">Aceptar</ion-button> -->
+
+  </ion-card>
+  <ion-card color="sombra">
+      <!-- <ion-item color="sombra"> -->
+          <ion-button color="light" size="large" expand="block" fill="clear" (click)="LogIn()">Aceptar</ion-button>
+        <!-- </ion-item> -->
+  </ion-card>
+
+  <div class="mayor" padding="0px 1px 1px 0px">
+    <div class="izq"><ion-button expand="block" >admin</ion-button></div>
+    <div class="der">  <ion-button expand="block">admin</ion-button></div>
+  </div>
+    
+  
+    
+ 
+
+<!-- <div>    <ion-button color="tertiary" size="large" expand="block">Aceptar</ion-button>
+</div>
+<div>    <ion-button color="sombra" size="large" expand="block">Cancelar</ion-button>
+</div> -->
+</ion-content>
