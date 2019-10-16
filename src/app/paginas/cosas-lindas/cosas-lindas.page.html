@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="toolbarHome">
+    <ion-buttons slot="start">
+      <button class="closeSession" size="small" shape="round" fill="outline" (click)="GoHome()">
+        <ion-icon name="home" class="logOutButton" style="color: #80DED9;"></ion-icon>
+      </button>
+      <button class="closeSession" size="small" shape="round" fill="outline" (click)="GoStats()">
+        <ion-icon name="podium" class="logOutButton" style="color: #53599A;"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="toolbarTitle">Cosas Lindas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="globalBackground no-scroll">
+  <div *ngIf="displayed && arrayCosasLindas.length === 0" class="no-data width-100 height-100">
+    <h1>No hay fotos cargadas</h1>
+  </div>
+  <div *ngIf="displayed" class="center-horizontal width-100 height-100">
+    <!-- Displayed is true -->
+    <ion-slides #slideAux class="width-100 height-100 center-horizontal"
+      [options]="{ direction: 'vertical', effect: 'fade' }">
+      <!-- Foto -->
+      <ion-slide class="flex-v" *ngFor="let dato of arrayCosasLindas">
+
+        <div [ngClass]="{
+          'picture-container' : !this.plt.isLandscape(),
+          'picture-container-land': this.plt.isLandscape()
+        }">
+          <img class="picture" src='{{dato.link}}' />
+        </div>
+        <div class="flex-v picture-detail">
+          <div class="user-info">{{dato.usuario}}</div>
+          <div class="center-horizontal">
+            <span class="user-info" style="font-size: 1em;">{{dato.fecha}}</span>
+          </div>
+          <div class="flex-h actions-container">
+            <div class="width-50">
+              <div class="flex-v icon-container mi-fab" (click)="ShowPicture(dato)">
+                <img class="mi-fab-icon" src="assets/imgs/eye.png">
+              </div>
+            </div>
+            <div class="width-50 end-horizontal">
+              <div class="flex-h"></div>
+              <div class="count-detail">{{dato.votos}}</div>
+              <div class="flex-v icon-container mi-fab" (click)="Like(dato)">
+                <img class="mi-fab-icon" src="assets/imgs/like.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

@@ -1,14 +1,29 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="title-color toolbar-gradient" color="primary">
+    <ion-buttons slot="start">
+      <button class="closeSession" size="small" shape="round" fill="outline" >
+        <ion-icon name="power" class="logOutButton"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+        Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
-</ion-content>
+<ion-content class="no-scroll">
+    <div class="flex-v height-100">
+      <button class="height-50 width-100 big-button-container-first ripple" (click)="cosasLindasClick()">
+        <div class="height-100 width-100 center-horizontal center-vertical">
+          <ion-icon name="ribbon" class="buttonIcon"></ion-icon>
+          <div class="text-title">Cosas Lindas del Edificio</div>
+        </div>
+      </button>
+      <button class="height-50 width-100 big-button-container-second ripple" (click)="cosasFeasClick()">
+        <div class="height-100 width-100 center-horizontal center-vertical">
+          <ion-icon name="trash" class="buttonIcon"></ion-icon>
+          <div class="text-title">Cosas Feas del Edificio</div>
+        </div>
+      </button>
+    </div>
+  </ion-content>

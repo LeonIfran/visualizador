@@ -1,1 +1,31 @@
 
+// Define los tamaños de los botones principales
+.big-button-container {
+    // Darle degradado al fondo
+    // background-image: radial-gradient(#0f8e94, #0e8d94, #0e8d94, #0a7479, #0a7479);
+    // background-image: radial-gradient(#d46893, #d21661, #ea2975, #af0548, #b6396b);
+  
+    &-first {
+      border: none !important;
+      outline: none;
+      // border-radius: 1em; // Añade bordes redondeados
+      // margin-bottom: 0.1em; // Añade distancia con botón inferior
+      background-color: #df553f;
+      // Aquí puedo elegir cualquier backgroupd-image de los anteriores para darle un degradado
+    }
+    &-second {
+      border: none !important;
+      outline: none;
+      // border-radius: 1em; // Añade bordes redondeados
+      // margin-top: 0.1em; // Añade distancia con el botón superior
+      background-color: #9fb41e;
+      // Aquí puedo elegir cualquier boackground-image de los anteriores para darle un degradado
+    }
+  }
+  
+  //Cambia el color y tamaño de los íconos
+  ion-icon.buttonIcon {
+    color: white;
+    font-size: 450%;
+    line-height: 2;
+  }

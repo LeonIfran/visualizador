@@ -10,8 +10,27 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {environment} from 'src/environments/environment';
+
+//Angular fire
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+// Firebase but for Files
+import { Camera } from '@ionic-native/camera/ngx';
+
+//Modal
+import {ModalPageModule} from './paginas/modal/modal.module';
+
+//Servicios
+import { AutentificacionService} from './servicios/autentificacion.service';
+import { FotosService } from './servicios/fotos.service';
+import { SpinnerHandlerService } from './servicios/spinner-handler.service';
+
+// Motion
+import { DeviceMotion } from '@ionic-native/device-motion/ngx';
+import { DeviceOrientation } from '@ionic-native/device-orientation/ngx';//instalar esto
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,13 +40,21 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     AppRoutingModule, 
     AngularFireModule.initializeApp(environment.firebaseConfig), 
     AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule,
+    ModalPageModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    AutentificacionService,
+    SpinnerHandlerService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Camera,
+    DeviceMotion,
+    DeviceOrientation,
   ],
   bootstrap: [AppComponent]
 })

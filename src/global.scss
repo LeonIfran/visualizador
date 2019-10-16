@@ -24,3 +24,330 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// Adjust height
+.height {
+    &-10 {
+      height: 10%;
+    }
+    &-20 {
+      height: 20%;
+    }
+    &-30 {
+      height: 30%;
+    }
+    &-40 {
+      height: 40%;
+    }
+    &-49 {
+      height: 49%;
+    }
+    &-50 {
+      height: 50%;
+    }
+    &-60 {
+      height: 60%;
+    }
+    &-70 {
+      height: 70%;
+    }
+    &-80 {
+      height: 80%;
+    }
+    &-90 {
+      height: 90%;
+    }
+    &-100 {
+      height: 100%;
+    }
+  }
+  
+  // Adjust width
+  .width {
+    &-10 {
+      width: 10%;
+    }
+    &-20 {
+      width: 20%;
+    }
+    &-30 {
+      width: 30%;
+    }
+    &-40 {
+      width: 40%;
+    }
+    &-50 {
+      width: 50%;
+    }
+    &-60 {
+      width: 60%;
+    }
+    &-70 {
+      width: 70%;
+    }
+    &-80 {
+      width: 80%;
+    }
+    &-90 {
+      width: 90%;
+    }
+    &-100 {
+      width: 100%;
+    }
+  }
+  
+  // Center inside objects horizontally
+  .center-horizontal {
+    display: flex;
+    justify-content: center;
+  }
+  
+  // Center inside objects vertically
+  .center-vertical {
+    display: flex;
+    align-items: center;
+  }
+  
+  // Center item in the middle of the screen, responsive to screen size changes
+  .middle-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+  
+  // All tittles with higher font size, center aligned and white color
+  .text-title {
+    color: white;
+    font-size: 250%; //Basado en relación al tamaño de fuente del documento
+    text-align: center;
+  }
+  
+  // Background color
+  .globalBackground {
+    background-color: #c9df3f;
+    --background: #c9df3f;
+  }
+  
+  // Makes transparent background items
+  .itemsBackground {
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    --highlight-height: 0 !important;
+  }
+  
+  // Sets up wrapping for the side mode
+  .flex {
+    &-v {
+      display: flex;
+      flex-direction: column;
+    }
+    &-h {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  // Splash Screen Related
+  .splash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#ffffff 0%, #aeecef 100%);
+    // background: url("./assets/splash-nologo.png");
+    // background-position: center;
+    // background-size: cover;
+  }
+  
+  .spinner-landscape {
+    width: 100vw;
+    height: 100vw;
+  }
+  
+  .spinner {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spinner-portrait {
+    width: 100vh;
+    height: 100vh;
+  }
+  
+  /* Ripple effect */
+  .ripple {
+    background-position: center;
+    transition: background 0.3s;
+  }
+  .ripple:hover {
+    background: #ffffff9a radial-gradient(circle, transparent 1%, #ffffff9a 1%) center/15000%;
+  }
+  
+  .ripple:active {
+    background-color: #ffffff9a;
+    background-size: 100%;
+    transition: background 0s;
+  }
+  
+  .no-data {
+    text-align: center;
+    color: #53599a;
+    font-size: 2rem;
+  }
+  
+  .toolbarHome {
+    --background: #262946;
+    --color: #80ded9;
+  }
+  
+  .toolbarTitle {
+    font-family: Caviar Bold;
+    font-size: 1.4rem;
+  }
+  
+  .picture-container {
+    height: 15rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .picture-container-land {
+    height: 12rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .picture {
+    min-height: 12rem;
+    max-height: 15rem;
+  }
+  
+  .picture-detail {
+    border-radius: 1rem;
+    background-color: transparentize($color: white, $amount: 0.5);
+  }
+  
+  .user-info {
+    display: flex;
+    justify-content: flex-start;
+    color: #000;
+    font-size: 1.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+  }
+  
+  .actions-container {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .icon-container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    margin: 0px 3px;
+  }
+  
+  .mi-fab {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    color: #fff;
+    transition: transform 200ms ease 10ms, opacity 200ms ease 10ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      -webkit-transform 200ms ease 10ms, -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    z-index: 0;
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 56px;
+    text-overflow: ellipsis;
+    text-transform: none;
+    white-space: nowrap;
+    cursor: pointer;
+    background-clip: padding-box;
+    user-select: none;
+    contain: strict;
+    border: 0;
+    font-family: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    padding: 1px 6px;
+    align-items: flex-start;
+  }
+  
+  .mi-fab-icon {
+    -webkit-box-flex: 1;
+    flex: 1;
+    font-size: 2.4rem;
+    touch-action: manipulation;
+    display: inline-block;
+    font-family: "Ionicons";
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-transform: none;
+  }
+  .end-horizontal {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .count-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: cornflowerblue;
+    margin-right: 0.5em;
+  }
+  
+  // Reduce el tamaño de la letra.
+  .closeSession {
+    background: transparent;
+    border: none !important;
+    outline: none;
+  }
+  
+  ion-icon.logOutButton {
+    line-height: 2;
+    font-size: 2em;
+  }
+  
+  ion-content.no-scroll {
+    --overflow: hidden;
+  }
+  
+  .toolbar-Gradient {
+    --background: linear-gradient(#7dbacc 0%, #1282a2 100%);
+  }
+  
+  
+  .spinnerText{
+    text-align: center;
+  }
