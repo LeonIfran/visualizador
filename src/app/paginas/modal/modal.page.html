@@ -1,9 +1,15 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>modal</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content padding class="globalBackground">
+  <div class="width-100 height-100 center-vertical center-horizontal flex-v">
+    <div class="width-100 height-100 center-horizontal" [ngClass]="{
+      'picture-modal-container' : !this.plt.isLandscape(),
+      'picture-modal-container-land': this.plt.isLandscape()
+    }"><img class="picture-modal" src='{{passedMessage.link}}' />
+    </div>
+  </div>
 </ion-content>
+
+<ion-footer color="">
+  <ion-toolbar class="modalFooter">
+    <ion-button class="iniciarSession" expand="full" shape="round" (click)="CloseModal()">Cerrar</ion-button>
+  </ion-toolbar>
+</ion-footer>

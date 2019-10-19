@@ -1,11 +1,14 @@
 <ion-header>
-  <ion-toolbar class="title-color toolbar-gradient" color="primary">
+  <ion-toolbar class="title-color toolbar-gradient" color="dark">
     <ion-buttons slot="start">
-      <button class="closeSession" size="small" shape="round" fill="outline" >
-        <ion-icon name="power" class="logOutButton"></ion-icon>
+      <button class="closeSession" size="small" shape="round" fill="outline" (click)="LogOut()">
+        <ion-icon name="power" class="logOutButton" style="color: rgb(255, 255, 255)"></ion-icon>
+      </button>
+      <button class="closeSession" size="small" shape="round" fill="outline" (click)="GoStats()">
+        <ion-icon name="podium" class="logOutButton" color="rojizo"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>
+    <ion-title color="primary">
         Inicio
     </ion-title>
   </ion-toolbar>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar class="toolbarHome">
+    <ion-buttons slot="start">
+      <button class="closeSession" size="small" shape="round" fill="outline" (click)="GoHome()">
+        <ion-icon name="home" class="logOutButton" style="color: #c9df3f;"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="toolbarTitle" style="color: #c9df3f;">Resultados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="globalBackground" [ngClass]="{
+  'no-scroll': this.plt.isPortrait()
+}">
+  <div class=" ion-padding" style="height: 99%" [ngClass]="{
+    'flex-h center-horizontal width-100': this.plt.isLandscape()
+  }">
+    <ion-card class="resultBG" [ngClass]="{
+    'height-100 width-100': this.plt.isLandscape(),
+    'height-49' : !this.plt.isLandscape()
+  }">
+      <ion-card-header>
+        <h3>Cosas Lindas</h3>
+      </ion-card-header>
+      <ion-card-content class="height-100 width-100">
+        <canvas #doughnutCanvas class="centered"></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="resultBG" [ngClass]="{
+      'height-100 width-100': this.plt.isLandscape(),
+      'height-49' : !this.plt.isLandscape()
+    }">
+      <ion-card-header>
+        <h3>Cosas Feas</h3>
+      </ion-card-header>
+      <ion-card-content class="height-100 width-100">
+        <canvas #barCanvas class="centered"></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

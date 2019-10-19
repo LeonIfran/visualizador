@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingOptions } from '@ionic/core';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class SpinnerHandlerService {
       spinner: 'bubbles',
       keyboardClose: true,
       message: messageSpinner !== '' ? messageSpinner : undefined,
-      showBackdrop: false
+      showBackdrop: false,
+      duration: 4000
     });
 
     return loader;

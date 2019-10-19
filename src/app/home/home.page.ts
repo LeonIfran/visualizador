@@ -36,7 +36,9 @@ export class HomePage {
       this.spinner.dismiss();
     });
   }
-
+  public GoStats() {
+    this.navCtrl.navigateForward('resultados');
+  }
   public cosasLindasClick() {
     this.ObtenerFoto('linda');
     this.navCtrl.navigateForward('cosas-lindas');

@@ -9,9 +9,9 @@ export const environment = {
     authDomain: "visualizador-fce65.firebaseapp.com",
     databaseURL: "https://visualizador-fce65.firebaseio.com",
     projectId: "visualizador-fce65",
-    storageBucket: "",
+    storageBucket: "visualizador-fce65.appspot.com",
     messagingSenderId: "166435035999",
-    appId: "1:166435035999:web:e8d841795fe897d6c434ea"
+    appId: "1:166435035999:web:e8d841795fe897d6c434ea"  
   }
 };
 

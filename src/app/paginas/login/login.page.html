@@ -31,8 +31,11 @@
   </ion-card>
 
   <div class="mayor" padding="0px 1px 1px 0px">
-    <div class="izq"><ion-button expand="block" >admin</ion-button></div>
-    <div class="der">  <ion-button expand="block">admin</ion-button></div>
+    <div class="izq"><ion-button color="rojizo" expand="block" (click)="UserSelectChangeBtn('admin')" >Admin</ion-button></div>
+    <div class="der">  <ion-button color="celestito" expand="block" (click)="UserSelectChangeBtn('invitado')">Invitado</ion-button></div>
+    <div class="izq"><ion-button color="naraju" expand="block" (click)="UserSelectChangeBtn('usuario')" >Usuario</ion-button></div>
+    <div class="der">  <ion-button color="violeta" expand="block" (click)="UserSelectChangeBtn('anonimo')">Anonimo</ion-button></div>
+    <div>  <ion-button color="pasto" expand="block" (click)="UserSelectChangeBtn('tester')">Tester</ion-button></div>
   </div>
     
   
