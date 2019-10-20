@@ -13,7 +13,7 @@ import { timer } from 'rxjs/internal/observable/timer';
   styleUrls: ['./cosas-feas.page.scss'],
 })
 export class CosasFeasPage implements OnInit {
-  @ViewChild('slideAux',{static: false}) slideAux: IonSlides;
+  @ViewChild('slideAux',null) slideAux: IonSlides;//{static: false}
 
   public arrayCosasFeas: Array<Foto> = new Array<Foto>();
   public displayed: boolean = false;

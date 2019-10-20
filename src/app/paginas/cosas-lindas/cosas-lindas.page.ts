@@ -14,7 +14,7 @@ import { timer } from 'rxjs/internal/observable/timer';
 })
 export class CosasLindasPage implements OnInit {
   //@ViewChild('slideAux') slideAux: IonSlid,es;
-  @ViewChild('slideAux',{static: false}) slideAux: IonSlides
+  @ViewChild('slideAux',null) slideAux: IonSlides
   public arrayCosasLindas: Array<Foto> = null;
   public displayed: boolean = false;
   private spinner = null;
