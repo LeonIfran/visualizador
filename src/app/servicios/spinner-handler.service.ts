@@ -11,11 +11,13 @@ export class SpinnerHandlerService {
 
   public async GetAllPageSpinner(messageSpinner) {
     const loader = await this.loadingCtrl.create({
-      spinner: 'bubbles',
+      spinner: 'circles',
       keyboardClose: true,
       message: messageSpinner !== '' ? messageSpinner : undefined,
       showBackdrop: false,
-      duration: 4000
+      duration: 2500,
+      //cssClass: 'loading'
+      cssClass:'custom-loader-class'
     });
 
     return loader;

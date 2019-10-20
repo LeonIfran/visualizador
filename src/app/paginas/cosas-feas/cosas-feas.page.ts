@@ -60,6 +60,8 @@ export class CosasFeasPage implements OnInit {
               this.puedeMover = true;
             });
           }
+          else if (acceleration.x > -3.0 && acceleration.x < 3.0 && acceleration.y > 8.5) {
+            this.GoHome();}
         }
       });
   }
@@ -97,7 +99,7 @@ export class CosasFeasPage implements OnInit {
   }
 
   private async ObtenerFeasDeBase() {
-    this.spinner = await this.spinnerHandler.GetAllPageSpinner('');
+    this.spinner = await this.spinnerHandler.GetAllPageSpinner('Espere');
     this.spinner.present();
 
     this.photoHandler.ObtenerFotos().subscribe(async (fotos) => {

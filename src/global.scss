@@ -25,6 +25,9 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+//custom loaders
+@import "./assets/loading.css";
+
 // Adjust height
 .height {
     &-10 {
@@ -351,3 +354,24 @@
   .spinnerText{
     text-align: center;
   }
+
+  .loading {
+/*     position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    border-radius: 5px; */
+  /*  background-color: rgba(0, 0, 0, 0.7); */
+    $loading-md-background:#dbea81;
+    color: rgb(17, 32, 12);
+/*     text-align: center;
+    text-overflow: ellipsis;
+    font-size: 15px;  */}
+    .loading h1, .loading h2, .loading h3, .loading h4, .loading h5, .loading h6 {
+      color: #dbea81; }
+        
+      .custom-loader-class{
+          --background:#dbea81;
+          --spinner-color:#553fdf;
+          color: var(--ion-color-dark);
+      }

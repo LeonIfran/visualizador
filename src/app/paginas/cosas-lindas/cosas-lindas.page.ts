@@ -59,7 +59,9 @@ export class CosasLindasPage implements OnInit {
             timer(1000).subscribe(() => {
               this.puedeMover = true;
             });
-          }
+          } else if (acceleration.x > -3.0 && acceleration.x < 3.0 && acceleration.y > 8.5) {
+            this.GoHome();}
+
         }
       });
   }
@@ -97,7 +99,7 @@ export class CosasLindasPage implements OnInit {
   }
 
   private async ObtenerLindasDeBase() {
-    this.spinner = await this.spinnerHandler.GetAllPageSpinner('');
+    this.spinner = await this.spinnerHandler.GetAllPageSpinner('Espere');
     this.spinner.present();
 
     this.photoHandler.ObtenerFotos().subscribe(async (fotos) => {

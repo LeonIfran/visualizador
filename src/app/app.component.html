@@ -1,4 +1,4 @@
-<div *ngIf="showSplash" class="splash">
+<!-- <div *ngIf="showSplash" class="splash">
   <div class="sk-cube-grid">
     <div class="sk-cube sk-cube1"></div>
     <div class="sk-cube sk-cube2"></div>
@@ -10,7 +10,16 @@
     <div class="sk-cube sk-cube8"></div>
     <div class="sk-cube sk-cube9"></div>
   </div>
+</div> -->
+<div *ngIf="this.showSplash" class="splash">
+  <div class="spinner">
+      <img src="../assets/splash_texto.png"> <!-- // No se mueve -->
+  </div>
+  <div class="ld ld-blur spinner">
+      <img src="../assets/splash_logo.png"><!--  // Se mueve -->
+  </div>
 </div>
+
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
