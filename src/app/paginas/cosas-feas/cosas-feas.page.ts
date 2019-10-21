@@ -44,7 +44,7 @@ export class CosasFeasPage implements OnInit {
   private IniciarCompass() {
     this.puedeMover = true;
     // Comienza a escuchar los cambios en el movimiento del dispositivo
-    this.analizarMovimiento = this.deviceMotion.watchAcceleration({ frequency: 9000 })
+    this.analizarMovimiento = this.deviceMotion.watchAcceleration({ frequency: 100 })
       .subscribe((acceleration: DeviceMotionAccelerationData) => {
         if (this.puedeMover) {
           if (acceleration.x > 8.0) {
@@ -62,15 +62,15 @@ export class CosasFeasPage implements OnInit {
               this.puedeMover = true;
             });
           }
-          else if (acceleration.x > -3.0 && acceleration.x < 3.0 && acceleration.y > 12.5) {
+          else if (acceleration.x > -3.0 && acceleration.x < 3.0 && acceleration.y > 10.5) {
             this.GoHome();}
         }
       });
   }
 
   public GoHome() {
-    //this.navCtrl.navigateRoot('home');
-    this._router.navigate(['home']);
+    this.navCtrl.navigateRoot('home');
+    //this._router.navigate(['home']);
   }
 
   public GoStats() {
@@ -126,8 +126,8 @@ export class CosasFeasPage implements OnInit {
 
   private OrderByDate() {
     this.arrayCosasFeas = this.arrayCosasFeas.sort((a, b) => {
-      const fechaA = new Date(a.fecha).getDate();
-      const fechaB = new Date(b.fecha).getDate();
+      const fechaA = new Date(a.fecha).getTime();
+      const fechaB = new Date(b.fecha).getTime();
       let auxReturn = 0;
 
       if (fechaA < fechaB) {
