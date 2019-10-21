@@ -6,6 +6,7 @@ import { NavController, Platform, ModalController, IonSlides } from '@ionic/angu
 import { ModalPage } from '../modal/modal.page';
 import { DeviceMotionAccelerationData, DeviceMotion } from '@ionic-native/device-motion/ngx';
 import { timer } from 'rxjs/internal/observable/timer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cosas-feas',
@@ -29,6 +30,7 @@ export class CosasFeasPage implements OnInit {
     public modalController: ModalController,
     public plt: Platform,
     private deviceMotion: DeviceMotion,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -42,7 +44,7 @@ export class CosasFeasPage implements OnInit {
   private IniciarCompass() {
     this.puedeMover = true;
     // Comienza a escuchar los cambios en el movimiento del dispositivo
-    this.analizarMovimiento = this.deviceMotion.watchAcceleration({ frequency: 100 })
+    this.analizarMovimiento = this.deviceMotion.watchAcceleration({ frequency: 9000 })
       .subscribe((acceleration: DeviceMotionAccelerationData) => {
         if (this.puedeMover) {
           if (acceleration.x > 8.0) {
@@ -60,14 +62,15 @@ export class CosasFeasPage implements OnInit {
               this.puedeMover = true;
             });
           }
-          else if (acceleration.x > -3.0 && acceleration.x < 3.0 && acceleration.y > 8.5) {
+          else if (acceleration.x > -3.0 && acceleration.x < 3.0 && acceleration.y > 12.5) {
             this.GoHome();}
         }
       });
   }
 
   public GoHome() {
-    this.navCtrl.navigateRoot('home');
+    //this.navCtrl.navigateRoot('home');
+    this._router.navigate(['home']);
   }
 
   public GoStats() {

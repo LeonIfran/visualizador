@@ -24,13 +24,7 @@ export class AppComponent {
   }
 
   initializeApp() {
-/*     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-
-      timer(3000).subscribe(()=> this.showSplash = false);
-    }); */
-        // console.log('Inicialize App');
+    // console.log('Inicialize App');
     this.platform.ready().then(() => {
       // console.log('Desactivo la Status Bar');
       this.statusBar.styleDefault();
